@@ -24,10 +24,7 @@ class App extends Component {
         super();
     }
 
-
     render() {
-        console.log("element", this.props.element.text);
-
         return(
             <div>
                 <div>
@@ -42,6 +39,5 @@ class App extends Component {
             </div>
         );
     }
-
 }
 export default  connect(mapStateToProps, mapDispatchToProps)(App);
