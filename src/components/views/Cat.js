@@ -3,9 +3,6 @@ import { Link } from 'react-router'
 
 export default class Cat extends Component {
 
-    static propTypes = {
-
-    };
     constructor() {
         super();
         this.state = {

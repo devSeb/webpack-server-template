@@ -2,6 +2,7 @@
 import React from 'react';
 import { render } from 'react-dom'
 import { Router, Route, Link, browserHistory } from 'react-router'
+//import { HashRouter, Route, Link } from 'react-router-dom';
 
 import App from './components/App.js';
 import Dog from './components/views/Dog.js';
@@ -28,4 +29,11 @@ render((
         <Route path="cat" component={Cat}/>
     </Router>
     </Provider>
+        //<HashRouter>
+        //    <div>
+        //        <Route exact path="/" component={App} />
+        //        <Route path="dog" component={Dog} />
+        //        <Route path="cat" component={Cat} />
+        //    </div>
+        //</HashRouter >
 ), document.getElementById('content'));

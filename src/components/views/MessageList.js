@@ -3,9 +3,6 @@ import Message from './Message.js';
 
 export default class MessageList extends Component {
 
-    static propTypes = {
-
-    };
     constructor() {
         super();
         this.state = {

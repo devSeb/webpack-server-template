@@ -19,7 +19,7 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ],
     module: {
         loaders: [
@@ -27,14 +27,25 @@ module.exports = {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
-                include: path.join(__dirname, 'src'),
-                loader: 'react-hot!babel'
+                include: path.join(__dirname, 'src')
+                //loader: 'react-hot!babel'
             },
             {
                 test: /\.scss$/,
                 include: path.join(__dirname, 'src'),
-                loader: 'style!css!sass'
+                loader: 'style-loader!css-loader!sass-loader'
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    { loader: "style-loader" },
+                    { loader: "css-loader" }
+                ]
             }
         ]
+
+    },
+    devServer: {
+        historyApiFallback: true
     }
 };
